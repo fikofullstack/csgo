@@ -1,0 +1,54 @@
+.shutter {
+  position: relative;
+  overflow: hidden;
+  width: 99.2 vw;
+  height: 100vw;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(/src/img/bg__photo/header_bg.jpg) no-repeat;
+    background-size: contain;
+    transform: scaleX(-1);
+    z-index: 0;
+  }
+
+  &>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+
+    width: 740px;
+    height: 94px;
+
+    &-wrapper {
+      width: 740px;
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__links {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    gap: 40px;
+  }
+
+  &__logo {
+    width: 88px;
+    height: 64px;
+
+    a {
+      img {
+        height: 64px;
+      }
+    }
+  }
+
+}
