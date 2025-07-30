@@ -1,0 +1,86 @@
+@use '/src/sass/lbs/variables.scss' as *;
+@use '/src/sass/lbs/mixins.scss' as *;
+
+.matches {
+    background-color: $black;
+    width: 100%;
+    height: 963px;
+
+    &__wrapper {
+        align-items: center;
+        gap: 10px; // расстояние между кнопками
+        position: relative; // можно оставить, если нужны другие absolute-элементы
+    }
+
+    &__about {
+        p {
+            width: 450px;
+            height: 45px;
+            opacity: 1;
+            top: 1136px;
+            left: 202px;
+            font-family: Montserrat;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 45px;
+            letter-spacing: 0%;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+
+    &__devider {
+        @include devider;
+        margin-top: 40px;
+    }
+
+    &__button {
+        @include btn_orange; // твой оранжевый миксин
+        width: 152px;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        &--active {
+            // убираем абсолют:
+            position: static;
+            top: auto;
+            left: auto;
+
+            // размеры и отступы из макета:
+            width: 152px;
+            height: 60px;
+            padding: 15px 31px;
+            border: 1px solid $orange;
+            background-color: $black;
+
+            span {
+                display: inline-block;
+                width: 81px;
+                height: 30px;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 30px;
+                letter-spacing: 1%;
+                color: #fff;
+            }
+        }
+
+        &__btn {
+            &-black {
+                @include btn_orange;
+                width: 152px;
+            }
+
+            &-orange {
+                @include btn_orange;
+                width: 152px;
+
+            }
+        }
+    }
+
+}

@@ -1,54 +1,60 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
-import viteImagemin from 'vite-plugin-imagemin';
+import viteImagemin from "vite-plugin-imagemin";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-	server: {
-		host: 'localhost', // или '0.0.0.0' для внешнего доступа
-		port: 4000,         // нужный порт
-	},
+  // ⚙️ Настройки dev-сервера
+  server: {
+    host: "localhost",
+    port: 5173,
+  },
 
-	// build: {
-	// 	rollupOptions: {
-	// 		input: {
-	// 			main: resolve(__dirname, "index.html"),
-	// 			catalog: "catalog.html",
-	// 			about: "about.html",
-	// 			blog: "blog.html",
-	// 		},
-	// 	},
-	// },
+  // ⚙️ Настройки предпросмотра (после сборки)
+  preview: {
+    host: "localhost",
+    port: 4173,
+  },
 
-	plugins: [
-		viteImagemin({
-			gifsicle: {
-				optimizationLevel: 7,
-				interlaced: false,
-			},
-			optipng: {
-				optimizationLevel: 7,
-			},
-			mozjpeg: {
-				quality: 20,
-			},
-			pngquant: {
-				quality: [0.8, 0.9],
-				speed: 4,
-			},
-			svgo: {
-				plugins: [
-					{
-						name: 'removeViewBox',
-					},
-					{
-						name: 'removeEmptyAttrs',
-						active: false,
-					},
-				],
-			},
-		}),
-	],
+  // 🧩 Плагины
+  plugins: [
+    viteImagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      mozjpeg: {
+        quality: 20,
+      },
+      pngquant: {
+        quality: [0.8, 0.9],
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          { name: "removeViewBox" },
+          { name: "removeEmptyAttrs", active: false },
+        ],
+      },
+    }),
+  ],
+
+  // 🏗 Раскомментируй блок ниже, если нужно использовать несколько HTML-файлов
+  /*
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        catalog: resolve(__dirname, "catalog.html"),
+        about: resolve(__dirname, "about.html"),
+        blog: resolve(__dirname, "blog.html"),
+      },
+    },
+  },
+  */
 });

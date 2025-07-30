@@ -1,0 +1,83 @@
+@use'/src/sass/lbs/variables.scss'as *;
+@mixin btn_orange {
+    width: 246px;
+    height: 50px;
+    angle: 0 deg;
+    opacity: 1;
+    gap: 10px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    background-color: $orange;
+    border: 2px solid $orange;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+  
+    &:hover {
+      background-color: $black;
+      transform: scale(1.05);
+      
+    }
+  
+    span {
+      font-family: Montserrat;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 1%;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+  }
+  
+  @mixin btn_black {
+    width: 246px;
+    height: 50px;
+    angle: 0 deg;
+    opacity: 1;
+    gap: 10px;
+    border-width: 2px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    border: 2px solid $orange;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+  
+    &:hover {
+      background-color: $orange;
+      transform: scale(1.05);
+  
+      span {
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+  
+    span {
+      width: 108px;
+      height: 20px;
+      opacity: 1;
+      font-family: Montserrat;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 1%;
+      color: rgba(255, 255, 255, 1);
+      transition: color 0.3s ease;
+    }
+  }
+
+
+  @mixin devider {
+    display: block;
+    width: 100%;
+    background-color: $orange;
+    height: 1px;
+  }
+  

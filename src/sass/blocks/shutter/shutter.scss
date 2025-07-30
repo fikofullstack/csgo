@@ -1,15 +1,20 @@
+@use '/src/sass/lbs/mixins.scss' as *;
+
 .shutter {
   position: relative;
   overflow: hidden;
-  width: 99.2 vw;
-  height: 100vw;
+ 
+  height: 950px;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
+    height: 120%;
+    width: 100vw;
+    top: -105px;
     background: url(/src/img/bg__photo/header_bg.jpg) no-repeat;
-    background-size: contain;
+    background-size: cover;
     transform: scaleX(-1);
     z-index: 0;
   }
@@ -34,10 +39,13 @@
   }
 
   &__links {
-    width: 150px;
+    width: 210px;
     height: 30px;
     display: flex;
-    gap: 40px;
+    gap: 30px;
+    .vk{
+      padding-top: 2px;
+    }
   }
 
   &__logo {
@@ -49,6 +57,64 @@
         height: 64px;
       }
     }
+  }
+
+  &__battlegrounds {
+    width: 703px;
+    height: 364px;
+    margin-top: 63px;
+
+    &-logo {
+      width: 191px;
+      height: 60px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-text {
+      color: rgba(255, 255, 255, 1);
+      width: 688px;
+      height: 164px;
+
+
+      h1 {
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 100%;
+        margin-top: 35px;
+      }
+
+      p {
+        display: block;
+        width: 100%;
+        height: 66px;
+        font-family: Montserrat;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 100%;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 1%;
+        margin-top: 25px;
+      }
+    }
+    &-btns{
+      display: flex;
+      gap: 35px;
+      padding-top: 155px;
+      .btn_black{
+        @include btn_black;
+      }
+      .btn_orange {
+        @include btn_orange;
+      }
+    }
+  }
+  &__devider{
+    @include devider;
+    margin-top: 38px;
   }
 
 }
