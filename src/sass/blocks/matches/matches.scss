@@ -8,23 +8,21 @@
 
     &__wrapper {
         align-items: center;
-        gap: 10px; // расстояние между кнопками
-        position: relative; // можно оставить, если нужны другие absolute-элементы
+        position: relative;
+        padding-top: 100px;
     }
 
     &__about {
         p {
+            font-family: Montserrat;
+            color: rgba(255, 255, 255, 1);
             width: 450px;
             height: 45px;
-            opacity: 1;
-            top: 1136px;
-            left: 202px;
             font-family: Montserrat;
             font-weight: 700;
             font-size: 32px;
+
             line-height: 45px;
-            letter-spacing: 0%;
-            color: rgba(255, 255, 255, 1);
         }
     }
 
@@ -34,7 +32,7 @@
     }
 
     &__button {
-        @include btn_orange; // твой оранжевый миксин
+        @include btn_orange;
         width: 152px;
         cursor: pointer;
         transition: transform 0.2s ease, background-color 0.3s ease;
@@ -44,12 +42,11 @@
         }
 
         &--active {
-            // убираем абсолют:
             position: static;
             top: auto;
             left: auto;
 
-            // размеры и отступы из макета:
+  
             width: 152px;
             height: 60px;
             padding: 15px 31px;
@@ -83,4 +80,275 @@
         }
     }
 
+    &__content {
+        width: 100%;
+
+        margin-top: 80px;
+
+        &-item {
+            display: none; 
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+
+            &:first-child {
+                display: flex;
+            }
+        }
+    }
+
+    &__card {
+        width: 350px;
+        height: 401px;
+        border-radius: 10px;
+        background: rgba(41, 42, 47, 1);
+        position: relative; 
+        overflow: hidden; 
+        cursor: pointer;
+        transition:
+            transform 0.3s ease,
+            background-color 0.3s ease,
+            box-shadow 0.3s ease,
+            border 0.3s ease;
+
+        &:hover {
+            background-color: rgba(243, 169, 23, 0.2); 
+            border: 1px solid rgba(243, 169, 23, 1); 
+            transform: translateY(10px);
+
+        }
+
+
+        &-btn {
+            @include btn_orange;
+            position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            pointer-events: none;
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+
+        }
+
+        &:hover {
+            .matches__card-btn {
+                opacity: 1;
+                // transform: translate(-50%, -50%) scale(1);
+                pointer-events: auto;
+            }
+        }
+
+        &-time {
+            margin-right: 9px;
+        }
+
+        &-about {
+            width: 346px;
+            height: 246px;
+            padding: 15.5px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+        }
+    }
+
+    &__about {
+        width: 284px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+
+
+
+        &-icons {
+            width: 120px;
+            height: 50px;
+            display: flex;
+            gap: 20px;
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &-nmgreen {
+            width: 285px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            p {
+                width: 215px;
+
+                font-family: Montserrat;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 35px;
+            }
+        }
+
+        &-nmred {
+            width: 284px;
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                width: 70%;
+                height: 35px;
+                width: 215px;
+                font-family: Montserrat;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 35px;
+            }
+        }
+
+        &-coefgreen {
+            display: flex;
+            justify-content: center;
+
+            width: 100px;
+            height: 30px;
+
+            border-width: 1px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 1px solid rgba(243, 169, 23, 1);
+
+            p {
+                width: 30px;
+                height: 20px;
+                margin-right: 10px;
+            }
+
+        }
+
+        &-coefred {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 58px;
+            height: 30px;
+            gap: 10px;
+            border-width: 1px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            border: 1px solid $orange;
+        }
+
+        &-text {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                width: 65%;
+                height: 20px;
+                font-family: Montserrat;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+                letter-spacing: 1%;
+            }
+
+            img {
+                width: 15%;
+            }
+        }
+    }
+
+
+
+
+    &__game-info {
+        width: 139px;
+        height: 20px;
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1%;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    &__data {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    &__time {
+        color: rgba(255, 255, 255, 1);
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 1%;
+    }
+
+    &__devider {
+        @include devider
+    }
+
+    &__slider {
+        width: 350px;
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        transform: translateX(35vw);
+        margin-top: 55px;
+
+        &-left {
+           @include slider__btn
+        }
+        &-right {
+            @include slider__btn
+        }
+    }
+
+}
+
+.matches__card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 7, 7, 0.76);
+    display: flex;
+    /* в центре по flex */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* 2. Кнопка */
+.matches__card-btn {
+    @include btn_orange;
+    opacity: 0;
+    // transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.matches__card:hover .matches__card-overlay {
+    opacity: 1;
+}
+
+.matches__card:hover .matches__card-btn {
+    opacity: 1;
 }

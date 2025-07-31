@@ -10,18 +10,20 @@ import '@fontsource/montserrat/400.css';  // Light
 import "../sass/style.scss";
 
 
-// JS: переключаем .matches__button--active между кнопками
-document.querySelectorAll('.matches__button').forEach(btn => {
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons  = document.querySelectorAll('.matches__button');
+  const contents = document.querySelectorAll('.matches__content-item');
+
+  buttons.forEach((btn, idx) => {
     btn.addEventListener('click', () => {
-      // убрать у всех
-      document
-        .querySelectorAll('.matches__button--active')
-        .forEach(active => active.classList.remove('matches__button--active'));
-      // добавить к тому, что кликнули
-      btn.classList.add('matches__button--active');
-  
-      // здесь — логика переключения слайдера
-      // e.g. if (btn.textContent === 'Matches') { showMatches(); } else { showBattles(); }
+      buttons.forEach(b => b.classList.remove('matches__button--active'));
+      btn.classList.add('matches__button--active');               // ← добавлено
+
+      contents.forEach(c => c.style.display = 'none');            // ← добавлено: скрываем все блоки
+      contents[idx].style.display = 'flex';                       // ← добавлено: показываем нужный
     });
   });
+});
+
+
   

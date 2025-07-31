@@ -17,6 +17,7 @@
     &:hover {
       background-color: $black;
       transform: scale(1.05);
+      color: #fff;
       
     }
   
@@ -79,5 +80,13 @@
     width: 100%;
     background-color: $orange;
     height: 1px;
+  }
+  @mixin slider__btn{
+    width: 85px;
+    height: 85px;
+    border: 2.5px solid $orange;
+    border-radius: 50%;
+    opacity: 1;
+    background: transparent;
   }
   
