@@ -11,19 +11,30 @@ import "../sass/style.scss";
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const buttons  = document.querySelectorAll('.matches__button');
-  const contents = document.querySelectorAll('.matches__content-item');
+  const tabButtons  = document.querySelectorAll('.matches__button');       // кнопки табов
+  const tabContents = document.querySelectorAll('.matches__content-item'); // содержимое табов
 
-  buttons.forEach((btn, idx) => {
+  // по умолчанию показываем только первый таб
+  tabContents.forEach((content, idx) => {
+    content.style.display = idx === 0 ? 'flex' : 'none';
+  });
+
+  tabButtons.forEach((btn, idx) => {
     btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('matches__button--active'));
-      btn.classList.add('matches__button--active');               // ← добавлено
+      // Переключаем активную кнопку
+      tabButtons.forEach(b => b.classList.remove('matches__button--active'));
+      btn.classList.add('matches__button--active');
 
-      contents.forEach(c => c.style.display = 'none');            // ← добавлено: скрываем все блоки
-      contents[idx].style.display = 'flex';                       // ← добавлено: показываем нужный
+      // Скрываем все табы
+      tabContents.forEach(c => (c.style.display = 'none'));
+
+      // Показываем нужный таб по индексу кнопки
+      tabContents[idx].style.display = 'flex';
     });
   });
 });
+
+
 
 
   

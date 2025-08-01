@@ -46,7 +46,7 @@
             top: auto;
             left: auto;
 
-  
+
             width: 152px;
             height: 60px;
             padding: 15px 31px;
@@ -86,9 +86,9 @@
         margin-top: 80px;
 
         &-item {
-            display: none; 
+            display: none;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 20px;
             justify-content: center;
 
             &:first-child {
@@ -98,12 +98,12 @@
     }
 
     &__card {
-        width: 350px;
+        width: 327px;
         height: 401px;
         border-radius: 10px;
         background: rgba(41, 42, 47, 1);
-        position: relative; 
-        overflow: hidden; 
+        position: relative;
+        overflow: hidden;
         cursor: pointer;
         transition:
             transform 0.3s ease,
@@ -112,8 +112,8 @@
             border 0.3s ease;
 
         &:hover {
-            background-color: rgba(243, 169, 23, 0.2); 
-            border: 1px solid rgba(243, 169, 23, 1); 
+            background-color: rgba(243, 169, 23, 0.2);
+            border: 1px solid rgba(243, 169, 23, 1);
             transform: translateY(10px);
 
         }
@@ -312,18 +312,152 @@
         height: 85px;
         display: flex;
         justify-content: space-between;
-        transform: translateX(35vw);
+        transform: translateX(30vw);
         margin-top: 55px;
 
         &-left {
-           @include slider__btn
+            @include slider__btn
         }
+
         &-right {
             @include slider__btn
         }
     }
 
+    &__slider {
+        width: 400px;
+        &-pointers{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 33%;
+        }
+    }
+    &__pointer{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: rgba(41, 42, 47, 1);
+    }
+
 }
+.active{
+    background: $orange;
+}
+
+.battle {
+    &__container {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        inset: 45px 35px;
+
+        &-title {
+            width: 100%;
+            height: 60px;
+
+            p {
+                font-family: Montserrat;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 1%;
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        &-devider {
+            @include devider;
+            margin-bottom: 40px;
+        }
+
+        &-coefgreen {
+            position: relative;
+            right: -33%;
+            bottom: -33px;
+
+            p {
+                position: absolute;
+                width: 76px;
+                font-family: Montserrat;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 1);
+                text-align: center;
+                inset: 10px;
+            }
+        }
+
+        &-logo {
+            width: 100%;
+
+
+            img {
+                width: 20px;
+                height: 40px;
+                position: relative;
+                left: 13px;
+            }
+        }
+
+        &-info {
+            display: flex;
+            position: relative;
+
+        }
+
+        &-commands {
+            margin-top: 22px;
+            margin-bottom: 30px;
+
+            p {
+                width: 86px;
+                height: 35px;
+                font-family: Montserrat;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 35px;
+                letter-spacing: 0%;
+                color: rgba(255, 255, 255, 1);
+
+            }
+        }
+
+        &-content {
+
+            height: 142px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        &-map {
+
+
+            p {
+                width: 279px;
+                height: 20px;
+                font-family: Montserrat;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+                letter-spacing: 1%;
+                color: rgba(196, 196, 197, 1);
+
+            }
+        }
+    }
+}
+
+.deactive {
+    display: none;
+}
+
+
+
+
 
 .matches__card-overlay {
     position: absolute;
@@ -345,6 +479,7 @@
     // transform: scale(0.8);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .matches__card:hover .matches__card-overlay {
     opacity: 1;
 }
