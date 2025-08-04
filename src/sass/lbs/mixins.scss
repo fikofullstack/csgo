@@ -90,3 +90,12 @@
     background: transparent;
   }
   
+  @mixin hover-button-effect {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: $orange;
+      border: 1px solid #000;
+      transform: scale(1.03);
+    }
+  }

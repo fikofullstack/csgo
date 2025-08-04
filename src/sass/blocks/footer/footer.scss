@@ -1,0 +1,22 @@
+@use "/src/sass/lbs/mixins.scss" as*;
+@use "/src/sass/lbs/variables.scss" as*;
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 1324px;
+overflow: hidden;
+    &__bg {
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 130%;
+            background: url(/src/img/footer/footer.jpg) no-repeat;
+            background-size: cover;
+            background-position-x: -500px;
+            // transform: scaleX(-1);
+            z-index: 0;
+          }
+    }
+}

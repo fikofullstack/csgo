@@ -316,11 +316,21 @@
         margin-top: 55px;
 
         &-left {
-            @include slider__btn
+            @include slider__btn;
+            @include hover-button-effect;
+            svg{
+                width: 60px;
+                color: #fff;
+            }
         }
 
         &-right {
-            @include slider__btn
+            @include slider__btn;
+            @include hover-button-effect;
+            svg{
+                width: 60px;
+                color: #fff;
+            }
         }
     }
 
@@ -461,7 +471,7 @@
 
 .matches__card-overlay {
     position: absolute;
-    inset: 0;
+    inset: -42px -43px;
     background: rgba(7, 7, 7, 0.76);
     display: flex;
     /* в центре по flex */

@@ -1,0 +1,128 @@
+@use "/src/sass/lbs/mixins.scss" as *;
+@use "/src/sass/lbs/variables.scss" as *;
+
+.rectangle {
+    background: $orange;
+    height: 520px;
+    
+
+    &__wrapper {
+        display: flex;
+
+    }
+
+    &__about {
+        width: 608px;
+        height: 175px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 150px;
+
+        h3 {
+            width: 331px;
+            height: 35px;
+            color: $black;
+            font-family: Montserrat;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 35px;
+        }
+
+        p {
+            width: 608px;
+            height: 120px;
+            font-family: Montserrat;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 1%;
+
+        }
+
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding-top: 120px;
+        padding-left: 110px;
+        width: 805px;
+
+    }
+
+    &__registration {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 68px;
+        align-items: center;
+
+        .devider {
+            width: 100px;
+            height: 2px;
+            border-width: 4px;
+            background: #fff;
+            font-size: 64px;
+            transform: translateY(-33px);
+
+        }
+    }
+
+    &__item {
+        width: 221px;
+        height: 165px;
+        display: flex;
+        flex-direction: column;
+        gap: 33px;
+        justify-content: center;
+        align-items: center;
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+
+                width: 106px;
+                height: 25px;
+                font-weight: 700;
+
+            }
+
+            p {
+                font-family: Montserrat;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 25px;
+                text-align: center;
+
+            }
+        }
+
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-container {
+            @include btn_black;
+            width: 341px;
+            height: 60px;
+            gap: 10px;
+            border-radius: 5px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 1);
+            color: $black;
+            &:hover {
+                background: $black;
+                color: white;
+            }
+        }
+
+
+    }
+}
